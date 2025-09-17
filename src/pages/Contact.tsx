@@ -8,6 +8,13 @@ import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import heroWorkshop from "@/assets/hero-workshop.jpg";
+import FadeInUp from "@/components/animations/FadeInUp";
+import FadeInLeft from "@/components/animations/FadeInLeft";
+import FadeInRight from "@/components/animations/FadeInRight";
+import StaggerContainer from "@/components/animations/StaggerContainer";
+import StaggerItem from "@/components/animations/StaggerItem";
+import SEOHead from "@/components/seo/SEOHead";
+import { getOrganizationStructuredData } from "@/components/seo/StructuredData";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -46,82 +53,101 @@ const Contact = () => {
 
   const contactInfo = [
     {
+      icon: <MapPin className="h-6 w-6 text-accent" />,
+      title: "Visit us",
+      details: ["Telemark Trade AS", "Gravevegen 64, 3803 BØ I TELEMARK"]
+    },
+    {
       icon: <Phone className="h-6 w-6 text-accent" />,
-      title: "Telefon",
-      details: ["+47 35 95 25 00", "Hverdager 08:00-16:00"]
+      title: "Contact us",
+      details: ["900 33 402"]
     },
     {
       icon: <Mail className="h-6 w-6 text-accent" />,
       title: "E-post", 
-      details: ["post@telemark-trade.no", "Svar innen 24 timer"]
-    },
-    {
-      icon: <MapPin className="h-6 w-6 text-accent" />,
-      title: "Besøksadresse",
-      details: ["Telemark Trade AS", "Telemark, Norge"]
-    },
-    {
-      icon: <Clock className="h-6 w-6 text-accent" />,
-      title: "Åpningstider",
-      details: ["Man-Fre: 08:00-16:00", "Lør: 10:00-14:00"]
+      details: ["klas.grave@telemark-trade.no"]
     }
   ];
 
   return (
     <div>
-      <HeroSection
-        backgroundImage={heroWorkshop}
-        title="Kontakt Oss"
-        subtitle="VI ER HER FOR DEG"
-        description="Ta kontakt med våre eksperter for råd, tilbud eller service. Vi hjelper deg gjerne!"
-        primaryCTA={{
-          text: "Ring oss nå",
-          link: "tel:+4735952500"
-        }}
-        secondaryCTA={{
-          text: "Send e-post",
-          link: "mailto:post@telemark-trade.no"
-        }}
+      <SEOHead
+        title="Kontakt"
+        description="Ta kontakt med våre eksperter for råd, tilbud eller service. Vårt erfarne team står klar til å hjelpe deg med båtmotorer og anleggsmaskiner."
+        structuredData={getOrganizationStructuredData()}
       />
+      
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/contacts.jpg"
+            alt="Telemark Trade kontakt"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/50" />
+        </div>
+        <FadeInUp delay={0.2} className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+          <FadeInUp delay={0.4}>
+            <span className="text-[0.7rem] uppercase tracking-[0.5em] text-accent mb-4 block">
+              Kontakt
+            </span>
+          </FadeInUp>
+          <FadeInUp delay={0.6}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              KONTAKT OSS
+            </h1>
+          </FadeInUp>
+          <FadeInUp delay={0.8}>
+            <p className="text-lg sm:text-xl text-zinc-200 max-w-2xl mx-auto mb-8">
+              Vi er her for deg! Ta kontakt med våre eksperter for råd, tilbud eller service. 
+              Vårt erfarne team står klar til å hjelpe deg.
+            </p>
+          </FadeInUp>
+        </FadeInUp>
+      </section>
 
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Information */}
-            <div className="lg:col-span-1 space-y-6">
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">
-                  Kom i kontakt
-                </h2>
-                <p className="text-muted-foreground mb-8">
-                  Vårt erfarne team står klar til å hjelpe deg med alle spørsmål 
-                  om våre produkter og tjenester.
-                </p>
-              </div>
+            <FadeInLeft delay={0.2} className="lg:col-span-1 space-y-6">
+              <FadeInUp delay={0.4}>
+                <div>
+                  <h2 className="text-3xl font-bold text-foreground mb-4">
+                    Kom i kontakt
+                  </h2>
+                  <p className="text-muted-foreground mb-8">
+                    Vårt erfarne team står klar til å hjelpe deg med alle spørsmål 
+                    om våre produkter og tjenester.
+                  </p>
+                </div>
+              </FadeInUp>
 
-              <div className="space-y-6">
+              <StaggerContainer className="space-y-6">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      {info.icon}
+                  <StaggerItem key={index}>
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        {info.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-1">
+                          {info.title}
+                        </h3>
+                        {info.details.map((detail, idx) => (
+                          <p key={idx} className="text-muted-foreground text-sm">
+                            {detail}
+                          </p>
+                        ))}
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">
-                        {info.title}
-                      </h3>
-                      {info.details.map((detail, idx) => (
-                        <p key={idx} className="text-muted-foreground text-sm">
-                          {detail}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
+                  </StaggerItem>
                 ))}
-              </div>
-            </div>
+              </StaggerContainer>
+            </FadeInLeft>
 
             {/* Contact Form */}
-            <div className="lg:col-span-2">
+            <FadeInRight delay={0.4} className="lg:col-span-2">
               <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl">Send oss en melding</CardTitle>
@@ -218,35 +244,28 @@ const Contact = () => {
                   </form>
                 </CardContent>
               </Card>
-            </div>
+            </FadeInRight>
           </div>
         </div>
       </section>
 
       {/* Google Maps Section */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Finn oss
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Besøk oss på vårt hovedkontor i Telemark
-            </p>
-          </div>
-
-          <div className="bg-muted rounded-lg overflow-hidden" style={{ height: "400px" }}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000000!2d10.7522!3d59.2181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46411d8c3dd2a245%3A0xf6e3b43e2a3c0a1a!2sTelemark%2C%20Norway!5e0!3m2!1sen!2sno!4v1629810000000!5m2!1sen!2sno"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Telemark Trade AS lokasjon"
-            />
-          </div>
+          <FadeInUp delay={0.6}>
+            <div className="bg-muted rounded-lg overflow-hidden" style={{ height: "400px" }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2030.260062509556!2d8.894297595547275!3d59.41205673904962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464751d83a169109%3A0x9d679cde836012e7!2sGravevegen%2064%2C%203803%20B%C3%B8%20i%20Telemark%2C%20Norway!5e0!3m2!1sen!2sph!4v1758141541613!5m2!1sen!2sph"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Telemark Trade AS lokasjon"
+              />
+            </div>
+          </FadeInUp>
         </div>
       </section>
     </div>
