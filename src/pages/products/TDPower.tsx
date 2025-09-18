@@ -29,8 +29,8 @@ const TDPower = () => {
               </span>
             </FadeInUp>
             <FadeInUp delay={0.6}>
-              <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
-                Premium båtmotorer for norske farvann.
+              <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl uppercase">
+                Premium båtmotorer.
               </h1>
             </FadeInUp>
           </FadeInLeft>
