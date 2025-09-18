@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckCircle, ExternalLink, Wrench, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroWorkshop from "@/assets/hero-workshop.jpg";
 import FadeInUp from "@/components/animations/FadeInUp";
 import FadeInLeft from "@/components/animations/FadeInLeft";
@@ -10,20 +12,6 @@ import ScaleIn from "@/components/animations/ScaleIn";
 import SEOHead from "@/components/seo/SEOHead";
 
 const Prices = () => {
-  const brands = [
-    {
-      name: "Hyundai",
-      description: "Pålitelige marine motorer med avansert teknologi",
-      icon: <Wrench className="h-8 w-8 text-accent" />,
-      link: "#hyundai"
-    },
-    {
-      name: "TD Power", 
-      description: "Robuste støpejern båtmotorer uten for mye elektronikk",
-      icon: <Zap className="h-8 w-8 text-accent" />,
-      link: "#td-power"
-    }
-  ];
 
   return (
     <div className="bg-zinc-50 text-slate-900">
@@ -56,27 +44,45 @@ const Prices = () => {
         </FadeInUp>
        </section>
 
-       {/* Hyundai Section */}
-       <section id="hyundai" className="border-b border-zinc-200 bg-white">
+       {/* Price Tables Section */}
+       <section className="border-b border-zinc-200 bg-white">
          <div className="container mx-auto px-4 py-28 lg:px-10">
           <div className="text-center mb-16">
-             <span className="text-[0.7rem] uppercase tracking-[0.5em] text-accent">Hyundai</span>
+             <span className="text-[0.7rem] uppercase tracking-[0.5em] text-accent">Prislister</span>
              <h2 className="text-3xl font-semibold sm:text-4xl mt-4">
-               Hyundai 2022 Prisliste
+               2022 Prislister
             </h2>
              <p className="text-lg text-slate-600 max-w-2xl mx-auto mt-6">
-               Pålitelige marine motorer med avansert teknologi
+               Se våre konkurransedyktige priser for båtmotorer og tilbehør
             </p>
           </div>
 
-           <div className="max-w-4xl mx-auto">
-             {/* Blue Banner Header */}
-             <div className="bg-primary text-primary-foreground py-6 px-8 rounded-t-3xl">
-               <h3 className="text-3xl font-bold text-center">Hyundai 2022</h3>
-             </div>
+           <div className="max-w-6xl mx-auto">
+             <Tabs defaultValue="hyundai" className="w-full">
+               <TabsList className="grid w-full grid-cols-2 mb-8">
+                 <TabsTrigger value="hyundai" className="flex items-center gap-2">
+                   <Wrench className="h-4 w-4" />
+                   Hyundai 2022
+                 </TabsTrigger>
+                 <TabsTrigger value="td-power" className="flex items-center gap-2">
+                   <Zap className="h-4 w-4" />
+                   TD Power 2022
+                 </TabsTrigger>
+               </TabsList>
 
-             {/* Price List Content */}
-             <div className="bg-white border border-t-0 border-zinc-200 rounded-b-3xl p-8">
+               <TabsContent value="hyundai" className="space-y-6">
+                 <div className="text-center mb-8">
+                   <h3 className="text-2xl font-semibold text-slate-900 mb-2">Hyundai Marine Motors</h3>
+                   <p className="text-slate-600">Pålitelige marine motorer med avansert teknologi</p>
+                 </div>
+
+                 {/* Blue Banner Header */}
+                 <div className="bg-primary text-primary-foreground py-6 px-8 rounded-t-3xl">
+                   <h3 className="text-3xl font-bold text-center">Hyundai 2022</h3>
+                 </div>
+
+                 {/* Price List Content */}
+                 <div className="bg-white border border-t-0 border-zinc-200 rounded-b-3xl p-8">
                {/* R200 Series */}
                <div className="mb-8">
                  <h4 className="text-xl font-bold text-slate-900 mb-4">R200 2.2 ltr, 200 hp v/3800 rpm, 430 Nm v/2000 rpm 280kg</h4>
@@ -230,32 +236,22 @@ const Prices = () => {
                    </div>
                  </div>
                </div>
-                  </div>
-          </div>
-        </div>
-      </section>
+                 </div>
+               </TabsContent>
 
-        {/* TD Power Section */}
-        <section id="td-power" className="border-b border-zinc-200 bg-zinc-50">
-          <div className="container mx-auto px-4 py-28 lg:px-10">
-          <div className="text-center mb-16">
-              <span className="text-[0.7rem] uppercase tracking-[0.5em] text-accent">TD Power</span>
-              <h2 className="text-3xl font-semibold sm:text-4xl mt-4">
-                TD Power 2022 Prisliste
-            </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto mt-6">
-                Robuste støpejern båtmotorer uten for mye elektronikk
-              </p>
-            </div>
+               <TabsContent value="td-power" className="space-y-6">
+                 <div className="text-center mb-8">
+                   <h3 className="text-2xl font-semibold text-slate-900 mb-2">TD Power Marine Motors</h3>
+                   <p className="text-slate-600">Robuste støpejern båtmotorer uten for mye elektronikk</p>
+                 </div>
 
-            <div className="max-w-4xl mx-auto">
-              {/* Blue Banner Header */}
-              <div className="bg-primary text-primary-foreground py-6 px-8 rounded-t-3xl">
-                <h3 className="text-3xl font-bold text-center">TD Power 2022</h3>
-              </div>
+                 {/* Blue Banner Header */}
+                 <div className="bg-primary text-primary-foreground py-6 px-8 rounded-t-3xl">
+                   <h3 className="text-3xl font-bold text-center">TD Power 2022</h3>
+                 </div>
 
-              {/* Price List Content */}
-              <div className="bg-white border border-t-0 border-zinc-200 rounded-b-3xl p-8">
+                 {/* Price List Content */}
+                 <div className="bg-white border border-t-0 border-zinc-200 rounded-b-3xl p-8">
                 {/* Important Notice */}
                 <div className="mb-8 p-4 bg-accent/10 border-l-4 border-accent rounded-r-lg">
                   <p className="text-sm text-slate-700">
@@ -427,12 +423,12 @@ const Prices = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-          </div>
-        </div>
-      </section>
-
-      
+                 </div>
+               </TabsContent>
+             </Tabs>
+           </div>
+         </div>
+       </section>
 
       {/* CTA Section */}
       <section className="relative overflow-hidden border-b border-zinc-200 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
@@ -461,7 +457,7 @@ const Prices = () => {
             <FadeInUp delay={1.0}>
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Button asChild size="lg" className="bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <a href="/kontakt">Snakk med Telemark</a>
+                  <Link to="/kontakt">Snakk med Telemark</Link>
                 </Button>
                 <a
                   href="tel:90033402"

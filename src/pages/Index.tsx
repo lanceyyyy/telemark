@@ -91,9 +91,9 @@ const Index = () => {
                       </div>
                       <h3 className="mb-3 text-xl font-semibold">Pålitelige båtmotorer</h3>
                       
-                      <a href="/produkter/td-power" className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium text-sm transition-colors">
+                      <Link to="/produkter/td-power" className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium text-sm transition-colors">
                         Les mer om TD POWER →
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </StaggerItem>
@@ -113,9 +113,9 @@ const Index = () => {
                       </div>
                       <h3 className="mb-3 text-xl font-semibold">Moderne elektriske motorer</h3>
                      
-                      <a href="/produkter/hyundai-seasall" className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium text-sm transition-colors">
+                      <Link to="/produkter/hyundai-seasall" className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium text-sm transition-colors">
                         Les mer om HYUNDAI SEASALL →
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </StaggerItem>
@@ -135,9 +135,9 @@ const Index = () => {
                       </div>
                       <h3 className="mb-3 text-xl font-semibold">Elektriske motorer for alle behov</h3>
                      
-                      <a href="/produkter/aquamot" className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium text-sm transition-colors">
+                      <Link to="/produkter/aquamot" className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium text-sm transition-colors">
                         Les mer om AQUAMOT →
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </StaggerItem>
@@ -157,9 +157,9 @@ const Index = () => {
                       </div>
                       <h3 className="mb-3 text-xl font-semibold">Kraftige hjullastere og anleggsmaskiner</h3>
                      
-                      <a href="/everun-hjullastere" className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium text-sm transition-colors">
+                      <Link to="/everun-hjullastere" className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium text-sm transition-colors">
                         Les mer om EVERUN WHEEL LOADERS →
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </StaggerItem>
