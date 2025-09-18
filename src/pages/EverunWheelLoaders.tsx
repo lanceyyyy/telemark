@@ -87,7 +87,7 @@ const EverunWheelLoaders = () => {
                 <FadeInUp delay={1.2}>
                   <div className="mt-6 p-4 bg-accent/10 border-l-4 border-accent rounded-r-lg">
                     <p className="text-base font-medium text-slate-800">
-                      Telemark Trade importerer og selger hjullastere fra kinesiske produsenten Everun.
+                      Telemark Trade importerer og selger hjullastere fra produsenten Everun.
                     </p>
                   </div>
                 </FadeInUp>

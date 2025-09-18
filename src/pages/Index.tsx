@@ -37,7 +37,7 @@ const Index = () => {
             </FadeInUp>
             <FadeInUp delay={0.6}>
               <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
-                Kraftige motorer for tøffe forhold.
+              Import og distribusjon av båtmotorer, anleggsmaskiner og tilbehør
               </h1>
             </FadeInUp>
             <FadeInUp delay={0.8}>
