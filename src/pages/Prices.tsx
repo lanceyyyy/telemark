@@ -2,6 +2,11 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, ExternalLink, Wrench, Zap } from "lucide-react";
 import heroWorkshop from "@/assets/hero-workshop.jpg";
 import FadeInUp from "@/components/animations/FadeInUp";
+import FadeInLeft from "@/components/animations/FadeInLeft";
+import FadeInRight from "@/components/animations/FadeInRight";
+import StaggerContainer from "@/components/animations/StaggerContainer";
+import StaggerItem from "@/components/animations/StaggerItem";
+import ScaleIn from "@/components/animations/ScaleIn";
 import SEOHead from "@/components/seo/SEOHead";
 
 const Prices = () => {
@@ -440,25 +445,33 @@ const Prices = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/10"></div>
         
         <div className="container relative mx-auto px-4 py-24 lg:px-10">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-400">Klar når du trenger oss</p>
-            <h2 className="mt-8 text-3xl font-semibold text-white sm:text-4xl">La oss finne løsningen sammen.</h2>
-            <p className="mt-6 text-base text-zinc-300 sm:text-lg">
-              Ring eller send kravspesifikasjonen. Vi møter deg med forslag, deler og 
-              mannskap som kjenner både båten og havna.
-            </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-lg hover:shadow-xl transition-all duration-300">
-                <a href="/kontakt">Snakk med Telemark</a>
-              </Button>
-              <a
-                href="tel:90033402"
-                className="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-300 transition hover:text-amber-400 hover:scale-105"
-              >
-                900 33 402
-              </a>
-            </div>
-          </div>
+          <FadeInUp delay={0.2} className="mx-auto max-w-3xl text-center">
+            <FadeInUp delay={0.4}>
+              <p className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-400">Klar når du trenger oss</p>
+            </FadeInUp>
+            <FadeInUp delay={0.6}>
+              <h2 className="mt-8 text-3xl font-semibold text-white sm:text-4xl">La oss finne løsningen sammen.</h2>
+            </FadeInUp>
+            <FadeInUp delay={0.8}>
+              <p className="mt-6 text-base text-zinc-300 sm:text-lg">
+                Ring eller send kravspesifikasjonen. Vi møter deg med forslag, deler og 
+                mannskap som kjenner både båten og havna.
+              </p>
+            </FadeInUp>
+            <FadeInUp delay={1.0}>
+              <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                <Button asChild size="lg" className="bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <a href="/kontakt">Snakk med Telemark</a>
+                </Button>
+                <a
+                  href="tel:90033402"
+                  className="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-300 transition hover:text-amber-400 hover:scale-105"
+                >
+                  900 33 402
+                </a>
+              </div>
+            </FadeInUp>
+          </FadeInUp>
         </div>
       </section>
     </div>

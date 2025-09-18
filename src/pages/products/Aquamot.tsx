@@ -2,11 +2,17 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, ExternalLink, Battery, Zap, Wrench, Shield } from "lucide-react";
 import heroMarineEngines from "@/assets/hero-marine-engines.jpg";
 import { Link } from "react-router-dom";
+import FadeInUp from "@/components/animations/FadeInUp";
+import FadeInLeft from "@/components/animations/FadeInLeft";
+import FadeInRight from "@/components/animations/FadeInRight";
+import StaggerContainer from "@/components/animations/StaggerContainer";
+import StaggerItem from "@/components/animations/StaggerItem";
+import ScaleIn from "@/components/animations/ScaleIn";
 
 const Aquamot = () => {
   const trendLineModels = [
-    { model: "Trend 1.1", power: "1100W", gasoline: "3.5 hp", battery: "640Wh", charger: "Included" },
-    { model: "Trend 1.6", power: "1600W", gasoline: "5.0 hp", battery: "640Wh", charger: "Included" },
+    { model: "Trend 1.1", power: "1100W", gasoline: "3.5 hp", battery: "640Wh", charger: "Inkludert" },
+    { model: "Trend 1.6", power: "1600W", gasoline: "5.0 hp", battery: "640Wh", charger: "Inkludert" },
     { model: "Trend 2.2", power: "2200W", gasoline: "6.5 hp", battery: "-", charger: "-" },
     { model: "Trend 4.3", power: "4300W", gasoline: "11 hp", battery: "-", charger: "-" },
     { model: "Trend 11.0", power: "11kW", gasoline: "28hp", battery: "-", charger: "-" },
@@ -16,35 +22,35 @@ const Aquamot = () => {
   ];
 
   const additionalEquipment = [
-    "Supplement for large battery 1280Wh Trend 1.1 and 1.6",
-    "Extra battery Trend 1.1 and 1.6 (640Wh)",
-    "Extra battery Trend 1.1 and 1.6 (1280Wh)",
-    "Extra propeller Trend 1.1 and 1.6",
-    "Long throttle arm",
-    "Additional charger Trend 1.1 and 1.6"
+    "Tillegg for stort batteri 1280Wh Trend 1.1 og 1.6",
+    "Ekstra batteri Trend 1.1 og 1.6 (640Wh)",
+    "Ekstra batteri Trend 1.1 og 1.6 (1280Wh)",
+    "Ekstra propell Trend 1.1 og 1.6",
+    "Lang gassarm",
+    "Ekstra lader Trend 1.1 og 1.6"
   ];
 
   const batteryAdvantages = [
-    "Superior lifespan (up to 950 cycles at 50% DOD)",
-    "More power per cycle: up to 30% more power consumption",
-    "Innovative silicone technology",
-    "High temperature resistant up to 65°C",
-    "Maximum performance through deep cycle technology",
-    "High continuous emission rates",
-    "Solid and leak-proof construction",
-    "Safe and secure",
-    "Completely maintenance-free",
-    "Low self-discharge"
+    "Overlegen levetid (opptil 950 sykluser ved 50% DOD)",
+    "Mer kraft per syklus: opptil 30% mer kraftforbruk",
+    "Innovativ silikonteknologi",
+    "Høy temperaturbestandig opptil 65°C",
+    "Maksimal ytelse gjennom dypsykel-teknologi",
+    "Høye kontinuerlige utslippsrater",
+    "Solid og lekkasjefri konstruksjon",
+    "Trygg og sikker",
+    "Helt vedlikeholdsfri",
+    "Lav selvutladning"
   ];
 
   const chargerAdvantages = [
-    "Ultimate high-frequency technology",
-    "Fully automatic, processor-controlled charging procedure",
-    "Soft start function",
-    "HFM types with integrated LCD display",
-    "Configuration of the charging curves with DIP switches",
-    "More security features",
-    "Suitable for lead-acid, GEL and AGM batteries"
+    "Ultimat høgfrekvent teknologi",
+    "Helt automatisk, prosessorstyrt lade prosedyre",
+    "Myk startfunksjon",
+    "HFM typer med integrert LCD skjerm",
+    "Konfigurasjon av ladekurvene med DIP brytere",
+    "Flere sikkerhetsfunksjoner",
+    "Egnet for bly-syre, GEL og AGM batterier"
   ];
 
   return (
@@ -54,63 +60,78 @@ const Aquamot = () => {
         <div className="absolute inset-0">
           <img
             src="/hero/aquamot.jpg"
-            alt="Aquamot electric marine motors"
+            alt="Aquamot elektriske marine motorer"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-slate-900/40" />
         </div>
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-400 mb-4 block">
-            Aquamot
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            VERDI & PÅLITELIGHET
-          </h1>
-          
-        </div>
+        <FadeInUp delay={0.2} className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+          <FadeInUp delay={0.4}>
+            <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-400 mb-4 block">
+              Aquamot
+            </span>
+          </FadeInUp>
+          <FadeInUp delay={0.6}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              VERDI & PÅLITELIGHET
+            </h1>
+          </FadeInUp>
+        </FadeInUp>
       </section>
 
       {/* Main Content Section */}
       <section className="border-b border-zinc-200 bg-white">
         <div className="container mx-auto px-4 py-28 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-500">Elektriske motorer</span>
-              <h2 className="text-3xl font-semibold sm:text-4xl mt-4">Høy kvalitet, bærekraftig og trygg</h2>
-              <p className="mt-6 text-base text-slate-600 sm:text-lg">
-                Aquamot leverer høykvalitets elektriske marine motorer. Leter du etter en elektrisk båtmotor? 
-                Velg Aquamot - her får du uovertruffen kraft og effektivitet som er like egnet for 
-                fritidsbåting og kommersiell bruk.
-              </p>
-              <div className="mt-6">
-                <a 
-                  href="https://aquamot.at/en/produkte/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium text-sm transition-colors"
-                >
-                  Besøk Aquamots nettside
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <div className="relative isolate overflow-hidden rounded-3xl border border-zinc-200 bg-white">
-                <img
-                  src="/aquamot.jpg"
-                  alt="Aquamot elektriske motorer i bruk"
-                  className="aspect-[4/3] w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/70 via-zinc-800/30 to-transparent" />
-                <div className="absolute bottom-6 left-6 space-y-2 text-zinc-100">
-                  <p className="text-xs uppercase tracking-[0.45em] text-amber-200/90">Aquamot i aksjon</p>
-                  <p className="max-w-sm text-sm text-zinc-100/90">
-                    Høy kvalitet, bærekraftig og trygg elektrisk båtmotor.
+            <FadeInLeft delay={0.2}>
+              <div>
+                <FadeInUp delay={0.4}>
+                  <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-500">Elektriske motorer</span>
+                </FadeInUp>
+                <FadeInUp delay={0.6}>
+                  <h2 className="text-3xl font-semibold sm:text-4xl mt-4">Høy kvalitet, bærekraftig og trygg</h2>
+                </FadeInUp>
+                <FadeInUp delay={0.8}>
+                  <p className="mt-6 text-base text-slate-600 sm:text-lg">
+                    Aquamot leverer høykvalitets elektriske marine motorer. Leter du etter en elektrisk båtmotor? 
+                    Velg Aquamot - her får du uovertruffen kraft og effektivitet som er like egnet for 
+                    fritidsbåting og kommersiell bruk.
                   </p>
+                </FadeInUp>
+                <FadeInUp delay={1.0}>
+                  <div className="mt-6">
+                    <a 
+                      href="https://aquamot.at/en/produkte/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium text-sm transition-colors"
+                    >
+                      Besøk Aquamots nettside
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </div>
+                </FadeInUp>
+              </div>
+            </FadeInLeft>
+
+            <FadeInRight delay={0.4}>
+              <div>
+                <div className="relative isolate overflow-hidden rounded-3xl border border-zinc-200 bg-white">
+                  <img
+                    src="/aquamot.jpg"
+                    alt="Aquamot elektriske motorer i bruk"
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/70 via-zinc-800/30 to-transparent" />
+                  <div className="absolute bottom-6 left-6 space-y-2 text-zinc-100">
+                    <p className="text-xs uppercase tracking-[0.45em] text-amber-200/90">Aquamot i aksjon</p>
+                    <p className="max-w-sm text-sm text-zinc-100/90">
+                      Høy kvalitet, bærekraftig og trygg elektrisk båtmotor.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </FadeInRight>
           </div>
         </div>
       </section>
@@ -118,29 +139,34 @@ const Aquamot = () => {
       {/* Navigation Section */}
       <section className="border-b border-zinc-200 bg-zinc-50">
         <div className="container mx-auto px-4 py-16 lg:px-10">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-semibold text-slate-900 mb-4">Våre produktserier</h2>
-            <p className="text-slate-600">Utforsk vårt omfattende utvalg av elektriske marine motorer og tilbehør</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <FadeInUp delay={0.2} className="text-center mb-12">
+            <FadeInUp delay={0.4}>
+              <h2 className="text-2xl font-semibold text-slate-900 mb-4">Våre produktserier</h2>
+            </FadeInUp>
+            <FadeInUp delay={0.6}>
+              <p className="text-slate-600">Utforsk vårt omfattende utvalg av elektriske marine motorer og tilbehør</p>
+            </FadeInUp>
+          </FadeInUp>
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { name: "Trend Line", href: "#trend-line", icon: <Zap className="h-6 w-6 text-amber-600" /> },
               { name: "Professional Line", href: "#professional-line", icon: <Wrench className="h-6 w-6 text-amber-600" /> },
-              { name: "Batteries", href: "#batteries", icon: <Battery className="h-6 w-6 text-amber-600" /> },
-              { name: "Chargers", href: "#chargers", icon: <Shield className="h-6 w-6 text-amber-600" /> }
+              { name: "Batterier", href: "#batteries", icon: <Battery className="h-6 w-6 text-amber-600" /> },
+              { name: "Ladere", href: "#chargers", icon: <Shield className="h-6 w-6 text-amber-600" /> }
                 ].map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className="group relative overflow-hidden rounded-xl border border-zinc-200 bg-white p-6 shadow-sm transition-all hover:shadow-md text-center"
-              >
-                <div className="flex flex-col items-center space-y-3">
-                  {item.icon}
-                  <span className="font-medium text-slate-900 group-hover:text-amber-700">{item.name}</span>
-                </div>
-              </a>
+              <StaggerItem key={index}>
+                <a
+                  href={item.href}
+                  className="group relative overflow-hidden rounded-xl border border-zinc-200 bg-white p-6 shadow-sm transition-all hover:shadow-md text-center"
+                >
+                  <div className="flex flex-col items-center space-y-3">
+                    {item.icon}
+                    <span className="font-medium text-slate-900 group-hover:text-amber-700">{item.name}</span>
+                  </div>
+                </a>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -254,14 +280,14 @@ const Aquamot = () => {
                         <td className="py-3 px-4 text-slate-600">1100W</td>
                         <td className="py-3 px-4 text-slate-600">3.5 hp</td>
                         <td className="py-3 px-4 text-slate-600">640Wh</td>
-                        <td className="py-3 px-4 text-slate-600">Included</td>
+                        <td className="py-3 px-4 text-slate-600">Inkludert</td>
                       </tr>
                       <tr className="border-b border-zinc-100">
                         <td className="py-3 px-4 font-medium text-slate-900">Trend 1.6</td>
                         <td className="py-3 px-4 text-slate-600">1600W</td>
                         <td className="py-3 px-4 text-slate-600">5.0 hp</td>
                         <td className="py-3 px-4 text-slate-600">640Wh</td>
-                        <td className="py-3 px-4 text-slate-600">Included</td>
+                        <td className="py-3 px-4 text-slate-600">Inkludert</td>
                       </tr>
                       <tr className="border-b border-zinc-100">
                         <td className="py-3 px-4 font-medium text-slate-900">Trend 2.2</td>
@@ -316,11 +342,11 @@ const Aquamot = () => {
               <div className="grid gap-3 md:grid-cols-2">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700">Folding propeller</span>
+                  <span className="text-sm text-slate-700">Sammenleggbar propell</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700">Extra propellers fixed</span>
+                  <span className="text-sm text-slate-700">Ekstra propeller fast</span>
                 </div>
               </div>
             </div>
@@ -489,25 +515,33 @@ const Aquamot = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/10"></div>
         
         <div className="container relative mx-auto px-4 py-24 lg:px-10">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-400">Klar når du trenger oss</p>
-            <h2 className="mt-8 text-3xl font-semibold text-white sm:text-4xl">La oss finne løsningen sammen.</h2>
-            <p className="mt-6 text-base text-zinc-300 sm:text-lg">
-              Ring eller send kravspesifikasjonen. Vi møter deg med forslag, deler og 
-              mannskap som kjenner både båten og havna.
-            </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-lg hover:shadow-xl transition-all duration-300">
-                <Link to="/kontakt">Snakk med Telemark</Link>
-              </Button>
-              <a
-                href="tel:90033402"
-                className="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-300 transition hover:text-amber-400 hover:scale-105"
-              >
-                900 33 402
-              </a>
-            </div>
-          </div>
+          <FadeInUp delay={0.2} className="mx-auto max-w-3xl text-center">
+            <FadeInUp delay={0.4}>
+              <p className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-400">Klar når du trenger oss</p>
+            </FadeInUp>
+            <FadeInUp delay={0.6}>
+              <h2 className="mt-8 text-3xl font-semibold text-white sm:text-4xl">La oss finne løsningen sammen.</h2>
+            </FadeInUp>
+            <FadeInUp delay={0.8}>
+              <p className="mt-6 text-base text-zinc-300 sm:text-lg">
+                Ring eller send kravspesifikasjonen. Vi møter deg med forslag, deler og 
+                mannskap som kjenner både båten og havna.
+              </p>
+            </FadeInUp>
+            <FadeInUp delay={1.0}>
+              <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                <Button asChild size="lg" className="bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Link to="/kontakt">Snakk med Telemark</Link>
+                </Button>
+                <a
+                  href="tel:90033402"
+                  className="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-300 transition hover:text-amber-400 hover:scale-105"
+                >
+                  900 33 402
+                </a>
+              </div>
+            </FadeInUp>
+          </FadeInUp>
         </div>
       </section>
     </div>

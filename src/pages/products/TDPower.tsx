@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroMarineEngines from "@/assets/hero-marine-engines.jpg";
+import FadeInUp from "@/components/animations/FadeInUp";
+import FadeInLeft from "@/components/animations/FadeInLeft";
+import FadeInRight from "@/components/animations/FadeInRight";
+import StaggerContainer from "@/components/animations/StaggerContainer";
+import StaggerItem from "@/components/animations/StaggerItem";
+import ScaleIn from "@/components/animations/ScaleIn";
 
 const TDPower = () => {
 
@@ -16,61 +22,78 @@ const TDPower = () => {
         <div className="absolute inset-0 bg-slate-900/20 mix-blend-multiply" aria-hidden />
         <div className="absolute inset-0 backdrop-blur-[2px]" aria-hidden />
         <div className="container relative mx-auto grid min-h-[50vh] gap-16 px-4 pb-20 pt-40 lg:grid-cols-[1.1fr,0.9fr] lg:items-center lg:px-10">
-          <div className="space-y-10 text-slate-100">
-            <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-200/90">
-              TD POWER
-            </span>
-            <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
-              Premium båtmotorer for norske farvann.
-            </h1>
-           
-          </div>
+          <FadeInLeft delay={0.2} className="space-y-10 text-slate-100">
+            <FadeInUp delay={0.4}>
+              <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-200/90">
+                TD POWER
+              </span>
+            </FadeInUp>
+            <FadeInUp delay={0.6}>
+              <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
+                Premium båtmotorer for norske farvann.
+              </h1>
+            </FadeInUp>
+          </FadeInLeft>
         </div>
       </section>
 
       <section className="border-b border-zinc-200 bg-white">
         <div className="container mx-auto px-4 py-28 lg:px-10">
           <div className="lg:grid lg:grid-cols-[auto,1fr] lg:items-start lg:gap-20">
-            <div className="hidden lg:flex flex-col items-center">
+            <FadeInLeft delay={0.2} className="hidden lg:flex flex-col items-center">
               <span className="rotate-90 text-[0.65rem] uppercase tracking-[0.6em] text-zinc-400">TD Power</span>
               <div className="mt-20 h-64 w-px bg-gradient-to-b from-zinc-400 via-zinc-300/40 to-transparent" />
-            </div>
+            </FadeInLeft>
             <div className="space-y-12">
-              <div className="max-w-3xl">
-                <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-500">Pålitelige motorer</span>
-                <h2 className="text-3xl font-semibold sm:text-4xl mt-4">Pålitelige og trygge båtmotorer</h2>
-                <p className="mt-6 text-base text-slate-600 sm:text-lg">
-                  TD Power er tilgjengelig fra 27 til 700 hestekrefter. Motorene produseres i Kina av en av 
-                  Kinas største produsenter og er robuste støpejern båtmotorer uten for mye elektronikk. 
-                  Dette gjør dem svært pålitelige og trygge motorer.
-                </p>
-                <p className="mt-4 text-base text-slate-600 sm:text-lg">
-                  Telemark Trade AS har levert flere hundre motorer til det norske markedet siden 2002. 
-                  Vi opprettholder fullt reservedelslager og gir to års garanti.
-                </p>
-                <div className="mt-6 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg">
-                  <p className="text-base font-medium text-slate-800">
-                    Kort sagt: God kvalitet til beste priser på markedet.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-12">
-                <div className="relative isolate overflow-hidden rounded-3xl border border-zinc-200 bg-white">
-                  <img
-                    src="/td.jpg"
-                    alt="TD Power båtmotor i bruk"
-                    className="aspect-[3/1] w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/70 via-zinc-800/30 to-transparent" />
-                  <div className="absolute bottom-6 left-6 space-y-2 text-zinc-100">
-                    <p className="text-xs uppercase tracking-[0.45em] text-amber-200/90">TD Power i aksjon</p>
-                    <p className="max-w-sm text-sm text-zinc-100/90">
-                      Pålitelige støpejern motorer som leverer kraft når du trenger det mest.
+              <FadeInUp delay={0.4}>
+                <div className="max-w-3xl">
+                  <FadeInUp delay={0.6}>
+                    <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-500">Pålitelige motorer</span>
+                  </FadeInUp>
+                  <FadeInUp delay={0.8}>
+                    <h2 className="text-3xl font-semibold sm:text-4xl mt-4">Pålitelige og trygge båtmotorer</h2>
+                  </FadeInUp>
+                  <FadeInUp delay={1.0}>
+                    <p className="mt-6 text-base text-slate-600 sm:text-lg">
+                      TD Power er tilgjengelig fra 27 til 700 hestekrefter. Motorene produseres i Kina av en av 
+                      Kinas største produsenter og er robuste støpejern båtmotorer uten for mye elektronikk. 
+                      Dette gjør dem svært pålitelige og trygge motorer.
                     </p>
+                  </FadeInUp>
+                  <FadeInUp delay={1.2}>
+                    <p className="mt-4 text-base text-slate-600 sm:text-lg">
+                      Telemark Trade AS har levert flere hundre motorer til det norske markedet siden 2002. 
+                      Vi opprettholder fullt reservedelslager og gir to års garanti.
+                    </p>
+                  </FadeInUp>
+                  <FadeInUp delay={1.4}>
+                    <div className="mt-6 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg">
+                      <p className="text-base font-medium text-slate-800">
+                        Kort sagt: God kvalitet til beste priser på markedet.
+                      </p>
+                    </div>
+                  </FadeInUp>
+                </div>
+              </FadeInUp>
+
+              <FadeInRight delay={0.6}>
+                <div className="mt-12">
+                  <div className="relative isolate overflow-hidden rounded-3xl border border-zinc-200 bg-white">
+                    <img
+                      src="/td.jpg"
+                      alt="TD Power båtmotor i bruk"
+                      className="aspect-[3/1] w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/70 via-zinc-800/30 to-transparent" />
+                    <div className="absolute bottom-6 left-6 space-y-2 text-zinc-100">
+                      <p className="text-xs uppercase tracking-[0.45em] text-amber-200/90">TD Power i aksjon</p>
+                      <p className="max-w-sm text-sm text-zinc-100/90">
+                        Pålitelige støpejern motorer som leverer kraft når du trenger det mest.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </FadeInRight>
 
             </div>
           </div>
@@ -79,29 +102,34 @@ const TDPower = () => {
 
       <section className="border-b border-zinc-200 bg-zinc-50">
         <div className="container mx-auto px-4 py-28 lg:px-10">
-          <div className="text-center mb-16">
-            <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-500">Produktgalleri</span>
-            <h2 className="text-3xl font-semibold sm:text-4xl mt-4">
-              TD Power motorer i aksjon
-            </h2>
-            
-          </div>
+          <FadeInUp delay={0.2} className="text-center mb-16">
+            <FadeInUp delay={0.4}>
+              <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-500">Produktgalleri</span>
+            </FadeInUp>
+            <FadeInUp delay={0.6}>
+              <h2 className="text-3xl font-semibold sm:text-4xl mt-4">
+                TD Power motorer i aksjon
+              </h2>
+            </FadeInUp>
+          </FadeInUp>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
             {Array.from({ length: 6 }, (_, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-all hover:shadow-md">
-                <img
-                  src={`/td-motor/${index + 1}.jpg`}
-                  alt={`TD Power motor ${index + 1}`}
-                  className="aspect-square w-full object-contain transition-transform group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-2 left-2 text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                  <p className="text-xs font-medium">TD Power {index + 1}</p>
+              <StaggerItem key={index}>
+                <div className="group relative overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-all hover:shadow-md">
+                  <img
+                    src={`/td-motor/${index + 1}.jpg`}
+                    alt={`TD Power motor ${index + 1}`}
+                    className="aspect-square w-full object-contain transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute bottom-2 left-2 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p className="text-xs font-medium">TD Power {index + 1}</p>
+                  </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
 
           <div className="max-w-4xl mx-auto">
             <div className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm">
@@ -144,25 +172,33 @@ const TDPower = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/10"></div>
         
         <div className="container relative mx-auto px-4 py-24 lg:px-10">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-400">Klar når du trenger oss</p>
-            <h2 className="mt-8 text-3xl font-semibold text-white sm:text-4xl">La oss finne løsningen sammen.</h2>
-            <p className="mt-6 text-base text-zinc-300 sm:text-lg">
-              Ring eller send kravspesifikasjonen. Vi møter deg med forslag, deler og 
-              mannskap som kjenner både båten og havna.
-            </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-lg hover:shadow-xl transition-all duration-300">
-                <Link to="/kontakt">Snakk med Telemark</Link>
-              </Button>
-              <a
-                href="tel:90033402"
-                className="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-300 transition hover:text-amber-400 hover:scale-105"
-              >
-                900 33 402
-              </a>
-            </div>
-          </div>
+          <FadeInUp delay={0.2} className="mx-auto max-w-3xl text-center">
+            <FadeInUp delay={0.4}>
+              <p className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-400">Klar når du trenger oss</p>
+            </FadeInUp>
+            <FadeInUp delay={0.6}>
+              <h2 className="mt-8 text-3xl font-semibold text-white sm:text-4xl">La oss finne løsningen sammen.</h2>
+            </FadeInUp>
+            <FadeInUp delay={0.8}>
+              <p className="mt-6 text-base text-zinc-300 sm:text-lg">
+                Ring eller send kravspesifikasjonen. Vi møter deg med forslag, deler og 
+                mannskap som kjenner både båten og havna.
+              </p>
+            </FadeInUp>
+            <FadeInUp delay={1.0}>
+              <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                <Button asChild size="lg" className="bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Link to="/kontakt">Snakk med Telemark</Link>
+                </Button>
+                <a
+                  href="tel:90033402"
+                  className="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-300 transition hover:text-amber-400 hover:scale-105"
+                >
+                  900 33 402
+                </a>
+              </div>
+            </FadeInUp>
+          </FadeInUp>
         </div>
       </section>
       

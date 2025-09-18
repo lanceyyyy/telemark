@@ -3,6 +3,12 @@ import { CheckCircle, Cpu, Volume2, Leaf, Wrench, Shield, X } from "lucide-react
 import heroMarineEngines from "@/assets/hero-marine-engines.jpg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import FadeInUp from "@/components/animations/FadeInUp";
+import FadeInLeft from "@/components/animations/FadeInLeft";
+import FadeInRight from "@/components/animations/FadeInRight";
+import StaggerContainer from "@/components/animations/StaggerContainer";
+import StaggerItem from "@/components/animations/StaggerItem";
+import ScaleIn from "@/components/animations/ScaleIn";
 
 const HyundaiSeasAll = () => {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
@@ -41,66 +47,85 @@ const HyundaiSeasAll = () => {
         <div className="absolute inset-0">
           <img
             src="/hero/seasall.jpg"
-            alt="Hyundai SeasAll marine engines"
+            alt="Hyundai SeasAll marine motorer"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-slate-900/40" />
         </div>
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-400 mb-4 block">
-            Hyundai SeasAll
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            INNOVATIV TEKNOLOGI
-          </h1>
-         
-        </div>
+        <FadeInUp delay={0.2} className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+          <FadeInUp delay={0.4}>
+            <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-400 mb-4 block">
+              Hyundai SeasAll
+            </span>
+          </FadeInUp>
+          <FadeInUp delay={0.6}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              INNOVATIV TEKNOLOGI
+            </h1>
+          </FadeInUp>
+        </FadeInUp>
       </section>
 
       {/* Main Content Section */}
       <section className="border-b border-zinc-200 bg-white">
         <div className="container mx-auto px-4 py-28 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-500">Pålitelige motorer</span>
-              <h2 className="text-3xl font-semibold sm:text-4xl mt-4">Pålitelige, høytpresterende motorer</h2>
-              <p className="mt-6 text-base text-slate-600 sm:text-lg">
-                Hyundai SeasAll marine motorer gir kraftig akselerasjon fra lave turtall og gjennom hele turtallsområdet, 
-                noe som gir utmerket kjørekomfort.
-              </p>
-              <p className="mt-4 text-base text-slate-600 sm:text-lg">
-                Variabel geometri turbo (VGT) og Common Rail drivstoffinjeksjon (CRDi) gir maksimalt dreiemoment 
-                over det meste av motorens turtallsområde.
-              </p>
-              <p className="mt-4 text-base text-slate-600 sm:text-lg">
-                Hyundai SeasAll har lav vekt og kraftig dreiemoment fra lave turtall. Dette resulterer i lav 
-                planing terskel og lavt drivstofforbruk. Lavt støynivå gjør det mulig å snakke og høre på musikk 
-                uten problemer under kjøring.
-              </p>
-              <div className="mt-6 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg">
-                <p className="text-base font-medium text-slate-800">
-                  For maksimal operasjonspålitelighet har motoren sitt eget diagnostikk- og overvåkingssystem. 
-                  De er NMEA2000 og CAN bus J1939 kompatible.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <div className="relative isolate overflow-hidden rounded-3xl border border-zinc-200 bg-white">
-                <img
-                  src="/seasall/image.jpg"
-                  alt="Hyundai SeasAll motor i bruk"
-                  className="aspect-[4/3] w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/70 via-zinc-800/30 to-transparent" />
-                <div className="absolute bottom-6 left-6 space-y-2 text-zinc-100">
-                  <p className="text-xs uppercase tracking-[0.45em] text-amber-200/90">Hyundai SeasAll i aksjon</p>
-                  <p className="max-w-sm text-sm text-zinc-100/90">
-                    Kraftige marine motorer med avansert teknologi og høy ytelse.
+            <FadeInLeft delay={0.2}>
+              <div>
+                <FadeInUp delay={0.4}>
+                  <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-500">Pålitelige motorer</span>
+                </FadeInUp>
+                <FadeInUp delay={0.6}>
+                  <h2 className="text-3xl font-semibold sm:text-4xl mt-4">Pålitelige, høytpresterende motorer</h2>
+                </FadeInUp>
+                <FadeInUp delay={0.8}>
+                  <p className="mt-6 text-base text-slate-600 sm:text-lg">
+                    Hyundai SeasAll marine motorer gir kraftig akselerasjon fra lave turtall og gjennom hele turtallsområdet, 
+                    noe som gir utmerket kjørekomfort.
                   </p>
+                </FadeInUp>
+                <FadeInUp delay={1.0}>
+                  <p className="mt-4 text-base text-slate-600 sm:text-lg">
+                    Variabel geometri turbo (VGT) og Common Rail drivstoffinjeksjon (CRDi) gir maksimalt dreiemoment 
+                    over det meste av motorens turtallsområde.
+                  </p>
+                </FadeInUp>
+                <FadeInUp delay={1.2}>
+                  <p className="mt-4 text-base text-slate-600 sm:text-lg">
+                    Hyundai SeasAll har lav vekt og kraftig dreiemoment fra lave turtall. Dette resulterer i lav 
+                    planing terskel og lavt drivstofforbruk. Lavt støynivå gjør det mulig å snakke og høre på musikk 
+                    uten problemer under kjøring.
+                  </p>
+                </FadeInUp>
+                <FadeInUp delay={1.4}>
+                  <div className="mt-6 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg">
+                    <p className="text-base font-medium text-slate-800">
+                      For maksimal operasjonspålitelighet har motoren sitt eget diagnostikk- og overvåkingssystem. 
+                      De er NMEA2000 og CAN bus J1939 kompatible.
+                    </p>
+                  </div>
+                </FadeInUp>
+              </div>
+            </FadeInLeft>
+
+            <FadeInRight delay={0.4}>
+              <div>
+                <div className="relative isolate overflow-hidden rounded-3xl border border-zinc-200 bg-white">
+                  <img
+                    src="/seasall/image.jpg"
+                    alt="Hyundai SeasAll motor i bruk"
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/70 via-zinc-800/30 to-transparent" />
+                  <div className="absolute bottom-6 left-6 space-y-2 text-zinc-100">
+                    <p className="text-xs uppercase tracking-[0.45em] text-amber-200/90">Hyundai SeasAll i aksjon</p>
+                    <p className="max-w-sm text-sm text-zinc-100/90">
+                      Kraftige marine motorer med avansert teknologi og høy ytelse.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </FadeInRight>
           </div>
         </div>
       </section>
@@ -108,33 +133,40 @@ const HyundaiSeasAll = () => {
       {/* Engine Gallery Carousel Section */}
       <section className="border-b border-zinc-200 bg-zinc-50">
         <div className="container mx-auto px-4 py-28 lg:px-10">
-          <div className="text-center mb-16">
-            <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-500">Produktgalleri</span>
-            <h2 className="text-3xl font-semibold sm:text-4xl mt-4">
-              Hyundai SeasAll motorer i aksjon
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto mt-6">
-              Se våre pålitelige marine motorer i bruk
-            </p>
-          </div>
+          <FadeInUp delay={0.2} className="text-center mb-16">
+            <FadeInUp delay={0.4}>
+              <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-500">Produktgalleri</span>
+            </FadeInUp>
+            <FadeInUp delay={0.6}>
+              <h2 className="text-3xl font-semibold sm:text-4xl mt-4">
+                Hyundai SeasAll motorer i aksjon
+              </h2>
+            </FadeInUp>
+            <FadeInUp delay={0.8}>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto mt-6">
+                Se våre pålitelige marine motorer i bruk
+              </p>
+            </FadeInUp>
+          </FadeInUp>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {Array.from({ length: 10 }, (_, index) => (
-              <div 
-                key={index} 
-                className="group relative overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-all hover:shadow-md cursor-pointer"
-                onClick={() => setLightboxImage(`/seasall/${index + 1}.jpg`)}
-              >
-                <img
-                  src={`/seasall/${index + 1}.jpg`}
-                  alt={`Hyundai SeasAll motor ${index + 1}`}
-                  className="aspect-square w-full object-contain transition-transform group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                
-              </div>
+              <StaggerItem key={index}>
+                <div 
+                  className="group relative overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-all hover:shadow-md cursor-pointer"
+                  onClick={() => setLightboxImage(`/seasall/${index + 1}.jpg`)}
+                >
+                  <img
+                    src={`/seasall/${index + 1}.jpg`}
+                    alt={`Hyundai SeasAll motor ${index + 1}`}
+                    className="aspect-square w-full object-contain transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -208,25 +240,33 @@ const HyundaiSeasAll = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/10"></div>
         
         <div className="container relative mx-auto px-4 py-24 lg:px-10">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-400">Klar når du trenger oss</p>
-            <h2 className="mt-8 text-3xl font-semibold text-white sm:text-4xl">La oss finne løsningen sammen.</h2>
-            <p className="mt-6 text-base text-zinc-300 sm:text-lg">
-              Ring eller send kravspesifikasjonen. Vi møter deg med forslag, deler og 
-              mannskap som kjenner både båten og havna.
-            </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-lg hover:shadow-xl transition-all duration-300">
-                <Link to="/kontakt">Snakk med Telemark</Link>
-              </Button>
-              <a
-                href="tel:90033402"
-                className="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-300 transition hover:text-amber-400 hover:scale-105"
-              >
-                900 33 402
-              </a>
-            </div>
-          </div>
+          <FadeInUp delay={0.2} className="mx-auto max-w-3xl text-center">
+            <FadeInUp delay={0.4}>
+              <p className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-400">Klar når du trenger oss</p>
+            </FadeInUp>
+            <FadeInUp delay={0.6}>
+              <h2 className="mt-8 text-3xl font-semibold text-white sm:text-4xl">La oss finne løsningen sammen.</h2>
+            </FadeInUp>
+            <FadeInUp delay={0.8}>
+              <p className="mt-6 text-base text-zinc-300 sm:text-lg">
+                Ring eller send kravspesifikasjonen. Vi møter deg med forslag, deler og 
+                mannskap som kjenner både båten og havna.
+              </p>
+            </FadeInUp>
+            <FadeInUp delay={1.0}>
+              <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                <Button asChild size="lg" className="bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Link to="/kontakt">Snakk med Telemark</Link>
+                </Button>
+                <a
+                  href="tel:90033402"
+                  className="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-300 transition hover:text-amber-400 hover:scale-105"
+                >
+                  900 33 402
+                </a>
+              </div>
+            </FadeInUp>
+          </FadeInUp>
         </div>
       </section>
     </div>

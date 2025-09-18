@@ -2,8 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroWorkshop from "@/assets/hero-workshop.jpg";
 import FadeInUp from "@/components/animations/FadeInUp";
+import FadeInLeft from "@/components/animations/FadeInLeft";
+import FadeInRight from "@/components/animations/FadeInRight";
 import StaggerContainer from "@/components/animations/StaggerContainer";
 import StaggerItem from "@/components/animations/StaggerItem";
+import ScaleIn from "@/components/animations/ScaleIn";
 import SEOHead from "@/components/seo/SEOHead";
 import { getServiceStructuredData } from "@/components/seo/StructuredData";
 
@@ -11,25 +14,25 @@ const Products = () => {
   const productCategories = [
     {
       title: "TD Power",
-      description: "High quality engines manufactured by one of China's largest manufacturers. Available from 21 to 400 horsepower.",
+      description: "Høykvalitets motorer produsert av en av Kinas største produsenter. Tilgjengelig fra 21 til 400 hestekrefter.",
       image: "/services/td-power.jpg",
       link: "/produkter/td-power"
     },
     {
       title: "Hyundai SeasAll",
-      description: "Powerful marine engines from Hyundai with high performance throughout the entire rev range. Delivering on both quality and price.",
+      description: "Kraftige marine motorer fra Hyundai med høy ytelse gjennom hele turtallsområdet. Leverer både på kvalitet og pris.",
       image: "/services/seasall.jpg",
       link: "/produkter/hyundai-seasall"
     },
     {
       title: "Aquamot",
-      description: "Aquamot is the leading manufacturer of high-quality and sustainable electric boat motors and matching components such as batteries and chargers.",
+      description: "Aquamot er den ledende produsenten av høykvalitets og bærekraftige elektriske båtmotorer og tilhørende komponenter som batterier og ladere.",
       image: "/services/aquamot.webp",
       link: "/produkter/aquamot"
     },
     {
-      title: "Everun wheel loaders",
-      description: "Everun wheel loaders are designed with safety, efficiency, ease of use, easy maintenance, productivity, performance, reliability and comfort in mind.",
+      title: "Everun hjullastere",
+      description: "Everun hjullastere er designet med sikkerhet, effektivitet, brukervennlighet, enkelt vedlikehold, produktivitet, ytelse, pålitelighet og komfort i tankene.",
       image: "/services/wheel.jpg",
       link: "/everun-hjullastere"
     }
@@ -48,7 +51,7 @@ const Products = () => {
         <div className="absolute inset-0">
           <img
             src="/products.jpg"
-            alt="Workshop background"
+            alt="Verksted bakgrunn"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-slate-900/40" />

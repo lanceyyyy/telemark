@@ -54,12 +54,12 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <MapPin className="h-6 w-6 text-accent" />,
-      title: "Visit us",
+      title: "Besøk oss",
       details: ["Telemark Trade AS", "Gravevegen 64, 3803 BØ I TELEMARK"]
     },
     {
       icon: <Phone className="h-6 w-6 text-accent" />,
-      title: "Contact us",
+      title: "Kontakt oss",
       details: ["900 33 402"]
     },
     {

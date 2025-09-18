@@ -49,7 +49,7 @@ const Index = () => {
             <FadeInUp delay={1.0}>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Button asChild size="lg" className="bg-amber-400 text-slate-900 hover:bg-amber-300">
-                  <Link to="/kontakt">Contact Us</Link>
+                  <Link to="/kontakt">Kontakt oss</Link>
                 </Button>
               </div>
             </FadeInUp>

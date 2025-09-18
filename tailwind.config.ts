@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['IBM Plex Serif', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['IBM Plex Serif', 'ui-serif', 'Georgia', 'serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
