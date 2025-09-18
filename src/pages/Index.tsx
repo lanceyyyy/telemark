@@ -36,8 +36,8 @@ const Index = () => {
               </span>
             </FadeInUp>
             <FadeInUp delay={0.6}>
-              <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
-              Import og distribusjon av båtmotorer, anleggsmaskiner og tilbehør
+              <h1 className="text-5xl font-semibold leading-tight text-white">
+              Salg og import av båtmotorer, anleggsmaskiner og utstyr
               </h1>
             </FadeInUp>
             <FadeInUp delay={0.8}>
