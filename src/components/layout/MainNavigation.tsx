@@ -155,7 +155,7 @@ const MainNavigation = () => {
         <div className="flex items-center h-16">
           {/* Logo - Left side */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/logo.jpg" alt="Telemark Trade AS" className="h-14 w-auto" />
+            <img src="/logo.png" alt="Telemark Trade AS" className="h-14 w-auto" />
           </Link>
 
           {/* Navigation Links - Centered */}
