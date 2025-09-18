@@ -149,21 +149,27 @@ const Aquamot = () => {
           </FadeInUp>
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { name: "Trend Line", href: "#trend-line", icon: <Zap className="h-6 w-6 text-amber-600" /> },
-              { name: "Professional Line", href: "#professional-line", icon: <Wrench className="h-6 w-6 text-amber-600" /> },
-              { name: "Batterier", href: "#batteries", icon: <Battery className="h-6 w-6 text-amber-600" /> },
-              { name: "Ladere", href: "#chargers", icon: <Shield className="h-6 w-6 text-amber-600" /> }
+              { name: "Trend Line", targetId: "trend-line", icon: <Zap className="h-6 w-6 text-amber-600" /> },
+              { name: "Professional Line", targetId: "professional-line", icon: <Wrench className="h-6 w-6 text-amber-600" /> },
+              { name: "Batterier", targetId: "batteries", icon: <Battery className="h-6 w-6 text-amber-600" /> },
+              { name: "Ladere", targetId: "chargers", icon: <Shield className="h-6 w-6 text-amber-600" /> }
                 ].map((item, index) => (
               <StaggerItem key={index}>
-                <a
-                  href={item.href}
-                  className="group relative overflow-hidden rounded-xl border border-zinc-200 bg-white p-6 shadow-sm transition-all hover:shadow-md text-center"
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    const element = document.getElementById(item.targetId);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  className="group relative overflow-hidden rounded-xl w-full border border-zinc-200 bg-white p-6 shadow-sm transition-all hover:shadow-md hover:bg-amber-50 hover:border-amber-200 text-center h-auto"
                 >
                   <div className="flex flex-col items-center space-y-3">
                     {item.icon}
                     <span className="font-medium text-slate-900 group-hover:text-amber-700">{item.name}</span>
                   </div>
-                </a>
+                </Button>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -221,7 +227,7 @@ const Aquamot = () => {
             </div>
 
             <div className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm">
-              <h3 className="text-2xl font-semibold text-slate-900 mb-6">Prisliste Utbordsmotorer</h3>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-6">Spesifikasjoner utbordsmotorer</h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
@@ -262,7 +268,7 @@ const Aquamot = () => {
 
             <div className="mt-12">
               <div className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm">
-                <h3 className="text-2xl font-semibold text-slate-900 mb-6">Prisliste POD (undervannshus)</h3>
+                <h3 className="text-2xl font-semibold text-slate-900 mb-6">PSpesifikasjoner POD (undervannshus)</h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>

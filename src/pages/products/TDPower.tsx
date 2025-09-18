@@ -104,13 +104,9 @@ const TDPower = () => {
         <div className="container mx-auto px-4 py-28 lg:px-10">
           <FadeInUp delay={0.2} className="text-center mb-16">
             <FadeInUp delay={0.4}>
-              <span className="text-[0.7rem] uppercase tracking-[0.5em] text-amber-500">Produktgalleri</span>
+              <span className="text-lg uppercase tracking-[0.5em] text-amber-500">Produktgalleri</span>
             </FadeInUp>
-            <FadeInUp delay={0.6}>
-              <h2 className="text-3xl font-semibold sm:text-4xl mt-4">
-                TD Power motorer i aksjon
-              </h2>
-            </FadeInUp>
+            
           </FadeInUp>
 
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
